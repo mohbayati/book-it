@@ -1,11 +1,10 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const dbConnect = () => {
-  console.log(mongoose.connection.readyState);
   if (mongoose.connection.readyState >= 1) {
     return;
   }
-  mongoose.connect(process.env.DB_LOCAL_URI);
+  mongoose.connect("mongodb://localhost:27017/bookit");
 };
 
-export default dbConnect;
+module.exports = dbConnect;

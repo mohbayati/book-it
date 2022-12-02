@@ -6,7 +6,8 @@ const handler = nc();
 
 dbConnect();
 
-handler.get(repo.allRooms);
-handler.post(repo.newRoom);
+handler.get(repo.getSingleRoom);
+handler.put(repo.updateRoom);
+handler.delete(repo.deleteRoom);
 
 export default handler;
